@@ -176,7 +176,7 @@ console.log(producto.precio);
 });
 
 /* find() recorrer el array y retomar el primer elemento de
-ese array que cumple con una condicion.
+ese array que cumple con una condicion.Solo el primero.
 Recibe una todos los elementos y la condicion que establezco
 en esa funcion.
 La respuest que trae es TRUE/FALSE.
@@ -250,6 +250,104 @@ const totalCarrito=productos.reduce((acumulador,producto)=>
 acumulador + producto.precio,0);
 
 console.log(totalCarrito);
+
+
+productos.forEach((producto)=>
+  console.log('El producto '+ producto.nombre+' y tiene un valor '+ producto.precio));
+
+const prices= productos.filter(producto=>producto.precio>=1200);
+console.log(prices);
+
+productos.filter((producto)=>producto.precio >= 1200)
+.forEach((producto)=>console.log('estos productos'+ producto.nombre+' son mayores a 12000'+ producto.precio));
+
+const numeroDecimal1=1.25;
+const numeroDecimal2=1.75;
+
+/*DOM: Document Object Model.
+Nodo Raiz: Head y Body.
+Nodo: etiquetas de html.
+
+5 Nodos:1_Document: nos permite entrar al Dom.*/
+
+console.log(document.body);
+
+/* Nodo2: Element: representa cada una de las etiquetas de Html*/
+
+/* Nodo3: Atributos/Attr: valores que tienen las etiquetas.
+Nodo4:Text: etiquetas de html que tienen texto.
+Nodo5:Comment:comentarios que deja el programador.
+dentro del codigo*/
+
+/*Metodos de entradas al DOM.
+-getElementById: este metodo relaciona el html con java 
+a traves de un atributo llamado id*/
+
+let galeria=document.getElementById('galeria');
+
+console.log(galeria);
+
+/*-getElementsByClassName:relaciona html con java a traves
+del atributo class*/
+
+/*let box=document.getElementsByClassName('box');
+
+console.log(box);*/
+
+let parrafo=document.getElementsByClassName('parrafo');
+
+console.log(parrafo);
+
+let equipos=document.getElementsByClassName('equipos');
+
+console.log(equipos);
+
+console.log(equipos[0].innerHTML);
+console.log(equipos[1].innerHTML);
+console.log(equipos[2].innerHTML);
+
+let parrafos=document.getElementsByClassName('parrafo');
+
+console.log(parrafos);
+
+console.log(parrafos[0].innerHTML);
+console.log(parrafos[1].innerHTML);
+
+/*-getElementsByTagName:utiliza los nombres de las etiquetas
+para relacionar html con java.*/
+
+let h1=document.getElementsByTagName('h1');
+
+console.log(h1);
+/* vamos a recorrer una estructura del DOM como si fuera
+un array. Para eso vamos a utilizar for of*/
+
+for(equipo of equipos)
+  {console.log(equipo.innerHTML)};
+
+/* querySelector relacionar html y java a traves 
+de etiquetas de html utilizando la sintexis de Css*/
+
+let teams=document.querySelectorAll('.equipos');
+
+console.log(teams);
+
+let titulos=document.querySelectorAll('h1');
+
+
+console.log(titulos);
+/*forEach recorre como un array combinado con queruSelectorAll*/
+teams.forEach(team=>console.log(team.textContent));
+
+
+titulos.forEach(titulo=>console.log(titulo.textContent));
+
+/*innerHTML: permite entrar y modificar al codigo de HTML que tiene
+el elemento que selecciones con el metodo.
+innerText:accedemos y podemos modificar al texto que tiene la etiqueta que 
+selecciona el metodo.*/
+const listas=document.querySelector('.box');
+console.log(listas.classList);
 
 
 
