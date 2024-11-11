@@ -348,7 +348,13 @@ innerText:accedemos y podemos modificar al texto que tiene la etiqueta que
 selecciona el metodo.*/
 const listas=document.querySelector('.box');
 console.log(listas.classList);
+listas.classList.add('box2');
+console.log(listas);
+listas.classList.remove('box');
+console.log(listas);
 
+const clubes=document.querySelector('.equipos');
 
+console.log(clubes.innerHTML);
 
 

@@ -250,3 +250,4 @@ const totalCarrito=productos.reduce((acumulador,producto)=>
 acumulador + producto.precio,0);
 
 console.log(totalCarrito);
+# Mi Proyecto
