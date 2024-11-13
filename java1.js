@@ -336,25 +336,72 @@ let titulos=document.querySelectorAll('h1');
 
 
 console.log(titulos);
-/*forEach recorre como un array combinado con queruSelectorAll*/
+/*forEach recorre como un array combinado con querySelectorAll*/
 teams.forEach(team=>console.log(team.textContent));
 
 
 titulos.forEach(titulo=>console.log(titulo.textContent));
+/*classList metodo nos trae el conjunto de class de un elemento*/
 
-/*innerHTML: permite entrar y modificar al codigo de HTML que tiene
-el elemento que selecciones con el metodo.
-innerText:accedemos y podemos modificar al texto que tiene la etiqueta que 
-selecciona el metodo.*/
-const listas=document.querySelector('.box');
-console.log(listas.classList);
-listas.classList.add('box2');
-console.log(listas);
-listas.classList.remove('box');
-console.log(listas);
+const box=document.querySelector('.box');
 
-const clubes=document.querySelector('.equipos');
+/*Agregar y sacar class a una etiqueta de html*/
 
-console.log(clubes.innerHTML);
+console.log(box.classList);
+
+box.classList.add('box2');
+box.classList.remove('box2');
+
+ /*innerHTML: Nos permite ver y cambiar elementos del DOM de html*/
+
+let box2=document.querySelector('.box');
+
+box2.innerHTML= '<h1> Hola esta es una nueva etiqueta</h1><p>Es un ciclo while que se encuentra en dentro de otro ciclo while.Repite iteraciones dentro de otras iteraciones.El ciclo externo controla el numero de repeticiones del ciclo interno.El ciclo interno se ejecuta entero completo en cada vuelta del ciclo externo.</p>';
+
+console.log(box2.innerHTML);
+/*innerText nos permite ver y cambiar texto dentro de las etiquetas.*/
+
+let box3=document.querySelector('.box');
+
+box3.innerText='Este curso es de lenguaje Javascript y se cursa los martes y jueves.'
+
+console.log(box3.innerText);
+
+/*createElement: crea nodos.*/
+
+let boxing=document.createElement('div');
+
+boxing.innerHTML='<h2>Este es el nuevo elemento de html</h2>';
+
+document.body.append(boxing);
+/*armar un array. Puede  ser vacio.*/
+
+const cuadros=['Douglas Haig','Boca Juniors','Gimnasia'];
+/*accedemos a lista que vamos a manipular a traves del DOM*/
+let listaDesordenada=document.querySelector('ul');
+/*recorremos el array por el metodo forEach y agregamos nuevos
+eslabones a la lista*/
+cuadros.forEach(cuadroNew=>{
+/*variable creamos un elemento li*/
+const cuadro=document.createElement('li');
+/*agregamos el texto de ese eslabon de la lista*/
+cuadro.innerText=cuadroNew;
+/*le damos la orden que agregue a la lista el eslabon*/
+listaDesordenada.appendChild(cuadro);
+}
+);
+/*Ahora agregamos el valor que va a tener ese eslabon*/
+
+const nuevoCuadro=document.createElement('li');
+nuevoCuadro.innerText='Argentinos Juniors';
+listaDesordenada.appendChild(nuevoCuadro);
+
+const nuevoCuadro1=document.createElement('li');
+nuevoCuadro1.innerText='Juventus';
+listaDesordenada.appendChild(nuevoCuadro1);
+
+
+
+
 
 
