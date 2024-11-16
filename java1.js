@@ -314,19 +314,19 @@ console.log(parrafos[0].innerHTML);
 console.log(parrafos[1].innerHTML);
 
 /*-getElementsByTagName:utiliza los nombres de las etiquetas
-para relacionar html con java.*/
+para relacionar html con java.
 
 let h1=document.getElementsByTagName('h1');
 
 console.log(h1);
-/* vamos a recorrer una estructura del DOM como si fuera
-un array. Para eso vamos a utilizar for of*/
+vamos a recorrer una estructura del DOM como si fuera
+un array. Para eso vamos a utilizar for of
 
 for(equipo of equipos)
   {console.log(equipo.innerHTML)};
 
-/* querySelector relacionar html y java a traves 
-de etiquetas de html utilizando la sintexis de Css*/
+querySelector relacionar html y java a traves 
+de etiquetas de html utilizando la sintexis de Css
 
 let teams=document.querySelectorAll('.equipos');
 
@@ -336,30 +336,30 @@ let titulos=document.querySelectorAll('h1');
 
 
 console.log(titulos);
-/*forEach recorre como un array combinado con querySelectorAll*/
+forEach recorre como un array combinado con querySelectorAll
 teams.forEach(team=>console.log(team.textContent));
 
 
 titulos.forEach(titulo=>console.log(titulo.textContent));
-/*classList metodo nos trae el conjunto de class de un elemento*/
+classList metodo nos trae el conjunto de class de un elemento
 
 const box=document.querySelector('.box');
 
-/*Agregar y sacar class a una etiqueta de html*/
+Agregar y sacar class a una etiqueta de html
 
 console.log(box.classList);
 
 box.classList.add('box2');
 box.classList.remove('box2');
 
- /*innerHTML: Nos permite ver y cambiar elementos del DOM de html*/
+ innerHTML: Nos permite ver y cambiar elementos del DOM de html
 
 let box2=document.querySelector('.box');
 
 box2.innerHTML= '<h1> Hola esta es una nueva etiqueta</h1><p>Es un ciclo while que se encuentra en dentro de otro ciclo while.Repite iteraciones dentro de otras iteraciones.El ciclo externo controla el numero de repeticiones del ciclo interno.El ciclo interno se ejecuta entero completo en cada vuelta del ciclo externo.</p>';
 
 console.log(box2.innerHTML);
-/*innerText nos permite ver y cambiar texto dentro de las etiquetas.*/
+innerText nos permite ver y cambiar texto dentro de las etiquetas.
 
 let box3=document.querySelector('.box');
 
@@ -367,30 +367,34 @@ box3.innerText='Este curso es de lenguaje Javascript y se cursa los martes y jue
 
 console.log(box3.innerText);
 
-/*createElement: crea nodos.*/
+createElement: crea nodos.
 
 let boxing=document.createElement('div');
 
 boxing.innerHTML='<h2>Este es el nuevo elemento de html</h2>';
 
 document.body.append(boxing);
-/*armar un array. Puede  ser vacio.*/
+/*armar un array. Puede  ser vacio.
+let listaNueva=document.querySelector('.box');
 
+let ulNueva=document.createElement('ul');
+
+listaNueva.appendChild(ulNueva);
 const cuadros=['Douglas Haig','Boca Juniors','Gimnasia'];
-/*accedemos a lista que vamos a manipular a traves del DOM*/
+accedemos a lista que vamos a manipular a traves del DOM
 let listaDesordenada=document.querySelector('ul');
-/*recorremos el array por el metodo forEach y agregamos nuevos
-eslabones a la lista*/
+recorremos el array por el metodo forEach y agregamos nuevos
+eslabones a la lista*
 cuadros.forEach(cuadroNew=>{
-/*variable creamos un elemento li*/
+variable creamos un elemento li*
 const cuadro=document.createElement('li');
-/*agregamos el texto de ese eslabon de la lista*/
+agregamos el texto de ese eslabon de la lista
 cuadro.innerText=cuadroNew;
-/*le damos la orden que agregue a la lista el eslabon*/
+le damos la orden que agregue a la lista el eslabon
 listaDesordenada.appendChild(cuadro);
 }
 );
-/*Ahora agregamos el valor que va a tener ese eslabon*/
+Ahora agregamos el valor que va a tener ese eslabon
 
 const nuevoCuadro=document.createElement('li');
 nuevoCuadro.innerText='Argentinos Juniors';
@@ -399,9 +403,92 @@ listaDesordenada.appendChild(nuevoCuadro);
 const nuevoCuadro1=document.createElement('li');
 nuevoCuadro1.innerText='Juventus';
 listaDesordenada.appendChild(nuevoCuadro1);
+*/
+
+const cuadros=['Douglas Haig','Boca Juniors','Gimnasia'];
+
+let box4=document.querySelector('.box');
+
+const nuevaLista=document.querySelector('ul');
+/*armamos una funcion que editara la lista y agregara eslabones*/
 
 
+function formatearLista(){
+/*limpiamos el contenido de la lista original*/
+nuevaLista.innerHTML='';
+/*Usamos forEach para crear elementos de la lista*/
+cuadros.forEach(
+cuadroNew=>{const cuadro=document.createElement('li');
+cuadro.innerText=cuadroNew;
+nuevaLista.appendChild(cuadro);
 
+}
+);
+}
+/*funcione que agrega li a la lista.*/
+
+function agregarCuadros(nuevoCuadro){
+/* utilizamos push como metodo de agregar elemento al array*/
+cuadros.push(nuevoCuadro);
+/*llamo al bloque de codigo que organizo los nuevos eslabones*/
+formatearLista();
+}
+
+formatearLista();
+agregarCuadros('Argentinos Juniors');
+agregarCuadros('Velez Sarfield');
+agregarCuadros('Fiorentina');
+
+
+/*Metodo de agregar una etiqueta al DOM en un lugar especifico
+del index.html*/
+
+
+let parrafo10=document.querySelector('.parrafo');
+
+let enlace=document.createElement('a');
+
+enlace.innerHTML="<br><br><a href='#'> Este enlace es nuevo</a>";
+/*Agrego el enlace dentro de la etiqueta parrafo10*/
+parrafo10.appendChild(enlace);
+
+/*Metodo de agregar una etiqueta al principio o antes de otra
+etiqueta en html*/
+
+let parrafo11=document.querySelector('.parrafo');
+/*Creo la etiqueta nueva a insertar*/
+let texto10=document.createElement('p');
+/*creo el elemento y su contenido*/
+texto10.innerHTML='<p>Permite ejecutar un bloque de codigo en forma repetitiva mientras se cumpla una determinada condicion.La condicion siempre se evalua al inicio del ciclo.Si la condicion es true ingresa el bucle y se ejecuta el codigo. Cuando la condicion es false deja de funcionar el bucle.El contador esta en las intrucciones , no esta en la condicion. Cuenta la cantidad de vueltas sino el while se reproduce al infinito.El contador debe estar si o si!!!!.</p>';
+
+/*agrego al Html*/
+
+parrafo11.prepend(texto10);
+
+
+/*Metodo que agrega etiqueta sin borrar el original usando append*/
+
+let footer=document.querySelector('footer');
+
+let texto11=document.querySelector('p');
+
+texto11.innerHTML='<p>Este diseño es del curso Javascritp del Cflp 403</p>';
+
+footer.append(texto11);
+
+/*Metodos de cambiar estilos desde Javascript*/
+
+let color=document.querySelector('body');
+
+
+color.style.backgroundColor='white';
+color.style.color='yellow';
+
+let borde=document.querySelector('header');
+
+borde.style.border='4px solid black';
+
+texto10.style.color='black';
 
 
 
