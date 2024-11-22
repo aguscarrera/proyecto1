@@ -1,71 +1,77 @@
 /*Armo un array de objetos que seran los botones de mi menu. Cada objeto
 tiene una propiedad y un valor. En este caso el nombre de cada boton y
-el nombre del enlace.*/
-
+el nombre del enlace.A uno de los botones le agrego un submenu. */
+/*Elijo uno de los botones(obejtos en java)donde va el submenu y incrusto
+un array con los elemenos que tiene el submenu*/
 const menuBotones=[
-{names:'Inicio',link:'#'},
-{names:'Productos1',link:'https://github.com/aguscarrera/java1'},
+{names:'Inicio',link:'https://www.primeraplana.com.ar/'},
+{names:'Productos1',link:'#',subMenu:[
+{names:'SubMenu1',link:'#'},
+{names:'SubMenu2',link:'#'}
+]},
 {names:'Productos2',link:'#'},
 {names:'Contacto',link:'#'}
-];
+]
 
-/* armamos una funcion que cree un menu nuevo con los elementos del array*/
+/*creamos una funcion que agregue el menu con el submenu al div del html
+menuContenedor*/
 
 function crearMenu(){
-/*Selecciono el div que va a contener el menu. Entro al dom de html*/
+/*selecciono el id que va a contener el menu*/
 const menuContenedor=document.querySelector('#menuContenedor');
+/* vamos a borrar el contenido de div y evito repeticiones.*/
+menuContenedor.innerHTML='';
+/*contruimos el menu a traves del array de objetos menuBotones*/
+/*agregar la lista principal*/
+const menuPrincipal=document.createElement('ul');
+menuPrincipal.classList.add('menu-principal');
 
-/* creamos la lista con la etiqueta ul que contendra los elementos
-li*/
-const menu=document.createElement('ul');
-/* agrego un id a la lista ul para darle estilo con css*/
-menu.id='menu';
-/*armar un forEach que crea cada elemento del menu con la etiqueta li*/
 
 menuBotones.forEach(boton=>{
-/*creamos los eslabones de la lista*/
-const listaBotones=document.createElement('li');
-/*contruimos el enlace del boton*/
+/*agregar un div que contenga botones principales*/
+const botonPrincipal=document.createElement('div');
+botonPrincipal.classList.add('menu-boton');
+/*agregar un enlace al boton principal*/
 const link=document.createElement('a');
-/*creo el contenido de la etiqueta li y la etiqueta a*/
-/*textContent= nombra a cada uno de los botones que tiene enlace*/
-link.textContent=boton.names;
+/* a la etiqueta a que contiene el enlace le agregamos texto y
+ruta del enlace. Texto y enlace estan guardados en el array*/
+link.textContent= boton.names;
 link.href=boton.link;
-/*agregar a(enlace)al li (eslabon)y el eslabon a lista*/
-listaBotones.appendChild(link);
-menu.appendChild(listaBotones);
+link.classList.add('menu-link');
+/*agrego la estructura creada al div menuContenedor*/
 
-});
-/*agregar el menu al div*/
-menuContenedor.appendChild(menu);
-};
+botonPrincipal.appendChild(link);
 
+/*vamos a agregar al boton correspondiente el submenu*/
 
-
-/*funcion que carga el menu creado en java al mismo tiempo que el html*/
-
-window.onload= crearMenu;
-
-
-/*agregar un elemento nuevo a la lista*/
-
-function agregarBoton(name,link){
-/*agrego objeto al array con el metodo push.key:valor*/
-menuBotones.push({names:name,link:link});
-/*creo una funcion que actualiza la lista original*/
-actualizarMenu();
-
-};
-
-function actualizarMenu(){
-const menuContenedor=document.querySelector('#menuContenedor');
-menuContenedor.innerHTML='';
-crearMenu();
+if(boton.subMenu){ const subMenu=document.createElement('ul');
+subMenu.classList.add('submenu');
+/*vamos a construir el submenu= eslabon de la lista y enlace del eslabon.*/
+boton.subMenu.forEach(subBoton=>{
+const subMenuBoton=document.createElement('li');
+const subLink=document.createElement('a');
+subLink.textContent=subBoton.names;
+subLink.href=subBoton.link;
+subLink.classList.add('submenu-link');
+subMenuBoton.appendChild(subLink);
+subMenu.appendChild(subMenuBoton);
+}
+);
+botonPrincipal.appendChild(subMenu);
+}
+menuPrincipal.appendChild(botonPrincipal);
+}
+);
+ menuContenedor.appendChild(menuPrincipal);
 }
 
-window.onload=()=>{
-crearMenu();
-agregarBoton('Carrito de Compras','#');
-}
+/*ARMAMOS UNA FUNCION QUE CARGA TODO EL CODIGO A LA PAGINA*/
+
+window.onload=()=>{crearMenu();};
+
+
+const btnPrincipal=document.querySelector('#btnPrincipal');
+
+btnPrincipal.addEventListener('click',function(){alert('Hola a todos');});
 
 
