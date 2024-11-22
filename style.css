@@ -1,0 +1,62 @@
+body{
+
+    font-family: arial,verdana,sans-serif;
+}
+
+/*Estilos generales del div que contiene el menu.Algunas opciones son opcionales*/
+#menuContenedor {
+background-color: #beb3b7;/*color de fondo*/
+width: 500px;/*Ancho del menu*/
+border:2px solid black;/*borde de la caja*/
+padding:15px;/*espacio interno*/
+}
+/*Estilos del menu principal saco las viñetas y pego los botones al margen*/
+.menu-principal{
+list-style-type: none;/*sin viñetas*/
+padding: 0px;/*sin espacio*/
+margin: 0px;/*sin margenes*/
+}
+.menu-boton{
+margin-bottom: 10px;/*espacio entre los botones*/
+}
+/*Estilos para los enlaces del menu principal*/
+.menu-link{
+font-size: 20px;/*tamaño de texto*/
+font-weight: bold;/*texto en negrito*/
+color:#2e111b;/*color de texto*/
+text-decoration: none;/*sin subrayado*/
+display: block;/* mostrar como bloque*/
+padding: 5px 10px;/*espacio entre elementos*/
+border-radius: 8px;/*bordes redondeados*/
+background-color: #4485a4;/*color de fondo*/
+}
+
+.menu-link:hover {
+
+background-color: #80c4e4;/*cambio de color al pasar el mouse*/
+}
+
+.submenu{
+list-style-type: none;/*saco las viñetas del submenu*/
+padding-left: 20px;/*sangria del submenu*/
+margin-top: 5px;/*espacio superior*/
+display: none;/*ocultar submenu por defecto*/
+
+}
+
+.submenu-link{
+color: #5c8765;/*color de la letra*/
+text-decoration: none;/*sin subrayada*/
+padding: 3px 8px;/*espacio interno*/
+display: block;/*mostrar como bloque*/
+font-size: 18px;/*tamaño del texto*/
+
+}
+.menu-boton:hover .submenu{
+    display: block;
+}
+
+.submenu-link:hover{
+color:#45f1ba; /*paso el raton y aparece el mouse*/
+
+}
