@@ -57,6 +57,7 @@ subMenuBoton.appendChild(subLink);
 subMenu.appendChild(subMenuBoton);
 }
 );
+
 botonPrincipal.appendChild(subMenu);
 }
 menuPrincipal.appendChild(botonPrincipal);
@@ -70,8 +71,64 @@ menuPrincipal.appendChild(botonPrincipal);
 window.onload=()=>{crearMenu();};
 
 
-const btnPrincipal=document.querySelector('#btnPrincipal');
+/*EVENTOS: son respuestas que aplica javascript a acciones determinadas*/
 
-btnPrincipal.addEventListener('click',function(){alert('Hola a todos');});
+let btn=document.querySelector('#btn');
+/* llamado al evento a traves de metodo addEventListener y luego armo
+la accion: ('callbak',funcion)*/
+btn.addEventListener('click',function(){alert('Hola a todos');});
+/* al pasar el raton por el boton elegido me genera una respuesta*/
+/*let btn1=document.querySelector('#btn1');
+
+btn1.addEventListener('mousemove',function(){console.log('llame al boton 2');})*/
+/*hago doble click con el mouse sobre el boton me genera uan respuesta*/
+let btn2=document.querySelector('#btn2');
+btn2.addEventListener('dblclick',dobleclick);
+
+function dobleclick(){
+
+console.log('Hice doble click sobre el boton2');	
+};
+/*mouseup cuando hago click mantengo apretado al solter se genera la respuesta*/
+let btn3=document.querySelector('#btn3');
+
+btn3.addEventListener('mouseup',function(){alert('Dejo el boton apretado');});
+
+let btn1=document.querySelector('#btn1');
+
+btn1.addEventListener('mousemove',cambiocolor);
+
+function cambiocolor(){
+
+btn1.style.background='blue';
+btn1.style.color='white';
+
+}
+
+btn1.addEventListener('mouseleave',function(){
+btn1.style.background='red';
+btn1.style.color='black';
+
+})
+
+let botonCambiarColor=document.querySelector('#dark-mode');
+let body=document.querySelector('body');
+
+botonCambiarColor.addEventListener('click',cambiarModoColor);
+
+function cambiarModoColor(){
+body.classList.toggle('darkmode');
+if(body.classList.contains('darkmode'))
+{
+botonCambiarColor.innerText='CAMBIAR LIGTH MODE';
+}
+else{
+	botonCambiarColor.innerText='CAMBIAR DARK-MODE';
+}
+}
+
+
+
+
 
 

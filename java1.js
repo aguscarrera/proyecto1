@@ -149,7 +149,7 @@ parametro.
 los elementos del array. Aplicar a cada elemente la funcion
 que esta dentro del parametro.*/
 
-const numeros=[12,21,34,48,5];
+/*const numeros=[12,21,34,48,5];
 
 const animales=['perro','gato','puma','tortuga'];
 
@@ -174,14 +174,14 @@ console.log(producto.nombre);
 console.log(producto.precio);
 
 });
-
+*/
 /* find() recorrer el array y retomar el primer elemento de
 ese array que cumple con una condicion.Solo el primero.
 Recibe una todos los elementos y la condicion que establezco
 en esa funcion.
 La respuest que trae es TRUE/FALSE.
 */
-
+/*
 const animal=animales.find((animal)=>animal==='murcialago');
 
 console.log(animal);
@@ -489,6 +489,50 @@ let borde=document.querySelector('header');
 borde.style.border='4px solid black';
 
 texto10.style.color='black';
+
+
+
+const numeros = [3, 9, 5, 2, 7];
+
+const numeroPar = numeros.find((numeroPar) => {
+    if ((numeroPar %2) === 0){
+        console.log('El número par del arreglo es: ' + numeroPar);
+    }
+});
+
+
+
+/* Ejercicio Nro 2 
+
+const nombres=['Ana', 'Juan', 'Maria', 'Luisa','Pedro', 'Pablo'];
+let hay = false;
+
+const nombre = nombres.find((nombre) => {
+    if (nombre.length > 5) {
+        console.log('Los nombre con mas de 5 letras son: ' , nombre);
+        hay = true;
+    }
+});
+
+if (!hay) {
+    console.log('No hay nombre con más de 5 letras en la lista');
+}
+
+*/
+
+/* Ejercicio Nro 3  
+
+function pasarACelsius (fahrenheit) {
+    return (fahrenheit - 32) / 1.8;
+}
+
+const fahrenheit = [32, 68, 86, 104, 212];
+
+const celsius = fahrenheit.map(pasarACelsius);
+
+console.log(celsius);
+
+*/
 
 
 
