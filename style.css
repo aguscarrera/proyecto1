@@ -1,62 +1,95 @@
-body{
+*{
+margin-left: 10px;
 
-    font-family: arial,verdana,sans-serif;
 }
 
-/*Estilos generales del div que contiene el menu.Algunas opciones son opcionales*/
-#menuContenedor {
-background-color: #beb3b7;/*color de fondo*/
-width: 500px;/*Ancho del menu*/
-border:2px solid black;/*borde de la caja*/
-padding:15px;/*espacio interno*/
+#menuContenedor{
+background-color: #f9edf6;/*color de fondo del div*/
+padding: 10px;/*espacio interior*/
+border-radius: 8px;/*redondeo borde*/
+width: 220px;/*ancho del div*/
+font-family: arial,verdana,sans-serif;/*familia fuente*/
 }
-/*Estilos del menu principal saco las viñetas y pego los botones al margen*/
+
 .menu-principal{
-list-style-type: none;/*sin viñetas*/
-padding: 0px;/*sin espacio*/
-margin: 0px;/*sin margenes*/
+list-style-type: none;/*saco viñetas*/
+padding:0px;/*dejo sin espacios la primera lista*/
+margin: 0px;/*dejo sin espacion entre la lista y el div*/
+
 }
+
 .menu-boton{
-margin-bottom: 10px;/*espacio entre los botones*/
+padding:10px;/*espacio entre los elementos del menu*/
+
 }
-/*Estilos para los enlaces del menu principal*/
+
 .menu-link{
-font-size: 20px;/*tamaño de texto*/
-font-weight: bold;/*texto en negrito*/
-color:#2e111b;/*color de texto*/
-text-decoration: none;/*sin subrayado*/
-display: block;/* mostrar como bloque*/
-padding: 5px 10px;/*espacio entre elementos*/
-border-radius: 8px;/*bordes redondeados*/
-background-color: #4485a4;/*color de fondo*/
+font-size: 20px;/*tamaño de fuente*/
+font-weight: bold;/*negrita*/
+color:#4c6e69;/*color de la fuente*/
+text-decoration: none;/*subrayado del enlace fuera*/
+display:block;/*transforma la etiqueta a en un bloque*/
+background-color: #89bad3;/*color del boton*/
+border-radius: 10px;/*redondeo de las bordes de la caja*/
+padding:5px 10px;/*espacio del enlace dentro de la caja*/
 }
 
-.menu-link:hover {
+.menu-link:hover{
 
-background-color: #80c4e4;/*cambio de color al pasar el mouse*/
+background-color: #850ef5;
+color:#f3eff7;
+
 }
-
 .submenu{
-list-style-type: none;/*saco las viñetas del submenu*/
-padding-left: 20px;/*sangria del submenu*/
-margin-top: 5px;/*espacio superior*/
-display: none;/*ocultar submenu por defecto*/
-
+list-style-type: none;/*saco viñetas*/
+display:none;/*ocultar el submenu*/
+padding-left:10px;/*corremos el submenu de izquierda a derecha*/
+margin-top: 8px;/*separamos botones uno de otro y del menu principal*/
 }
 
 .submenu-link{
-color: #5c8765;/*color de la letra*/
-text-decoration: none;/*sin subrayada*/
-padding: 3px 8px;/*espacio interno*/
-display: block;/*mostrar como bloque*/
-font-size: 18px;/*tamaño del texto*/
+display:block;/*enlace le doy la propiedad de bloque*/
+text-decoration: none;/*saco el subrayado*/
+color: #7106d6;/*color de la fuente*/
+padding: 5px ;/*espacio del elemento en el boton*/
+font-size: 18px;/*tamaño de fuente*/
+font-weight: bold;/*negrita*/
 
 }
 .menu-boton:hover .submenu{
-    display: block;
-}
 
+display:block;/*al pasar el raton por el boton que tiene submenu 
+el submenu se despliega pro la accion del display block*/
+
+}
 .submenu-link:hover{
-color:#45f1ba; /*paso el raton y aparece el mouse*/
+
+background-color: #ddc1f8;/*color de fondo*/
 
 }
+
+#btn1{
+width: 30px;
+height: 50px;
+
+
+}
+
+#dark-mode{
+width: 100px;
+height: 45px;
+border-radius: 10px;
+color: black;
+background-color: #cdc2d7;
+font-weight: bold;
+
+
+}
+
+body.darkmode{
+background-color: #310c84;
+color:#f8aaea;
+
+}
+
+
