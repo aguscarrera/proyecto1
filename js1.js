@@ -76,13 +76,13 @@ window.onload=()=>{crearMenu();};
 let btn=document.querySelector('#btn');
 /* llamado al evento a traves de metodo addEventListener y luego armo
 la accion: ('callbak',funcion)*/
-btn.addEventListener('click',function(){alert('Hola a todos');});
+/*btn.addEventListener('click',function(){alert('Hola a todos');});
 /* al pasar el raton por el boton elegido me genera una respuesta*/
 /*let btn1=document.querySelector('#btn1');
 
 btn1.addEventListener('mousemove',function(){console.log('llame al boton 2');})*/
 /*hago doble click con el mouse sobre el boton me genera uan respuesta*/
-let btn2=document.querySelector('#btn2');
+/*let btn2=document.querySelector('#btn2');
 btn2.addEventListener('dblclick',dobleclick);
 
 function dobleclick(){
@@ -90,7 +90,7 @@ function dobleclick(){
 console.log('Hice doble click sobre el boton2');	
 };
 /*mouseup cuando hago click mantengo apretado al solter se genera la respuesta*/
-let btn3=document.querySelector('#btn3');
+/*let btn3=document.querySelector('#btn3');
 
 btn3.addEventListener('mouseup',function(){alert('Dejo el boton apretado');});
 
@@ -126,6 +126,53 @@ else{
 	botonCambiarColor.innerText='CAMBIAR DARK-MODE';
 }
 }
+
+/* a traves de un metodo de array voy a recorrer los botones de una botonera*/
+
+const btns=document.querySelectorAll('button');
+
+btns.forEach((boton)=>{
+boton.addEventListener('click',function(){
+alert('Usted hizo click en el boton: '+ boton.textContent);
+
+})} );
+
+/*EVENTOS DE FORMULARIOS*/
+
+/*EVENTO INPUT: trabaja dentro de los input de HTML*/
+/*
+const alertaForm=document.querySelector('#alerta-form');
+const inputNombre=document.querySelector('#input-nombre');
+/*funcionamiento del input*/
+/*alertaForm.addEventListener('input',()=>{console.log('Hola');})*/
+/*reproducir la escritura del input*/
+/*alertaForm.addEventListener('input',()=>{console.log(inputNombre.value);})*/
+/*Comprueba el envio de datos del submit
+alertaForm.addEventListener('submit',()=>{console.log(inputNombre.value);})
+*/
+/*
+alertaForm.addEventListener('submit',(e)=>{
+e.preventDefault();/*contrarestra la propiedad de cualquier metodo de java*/
+/*console.log(inputNombre.value);/*captura los datos del input*/
+//})
+
+/*Capturar datos de un formulario*/
+
+const form=document.querySelector('#alerta-form');
+
+form.addEventListener('submit',function(event){
+event.preventDefault();/*evitamos la propiedad submit de envio de datos del formulario*/
+const nombre=document.querySelector('#input-nombre').value;
+/*llamo al input con su id y captura el valor con la propieda .value*/
+const apellido=document.querySelector('#input-apellido').value;
+/*llamo al segundo input y captura su valor*/
+console.log('Nombre: '+ nombre);
+console.log('Apellido: '+ apellido);
+form.reset();
+
+})
+
+
 
 
 
