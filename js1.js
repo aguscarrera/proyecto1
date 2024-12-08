@@ -133,7 +133,11 @@ const btns=document.querySelectorAll('button');
 
 btns.forEach((boton)=>{
 boton.addEventListener('click',function(){
-alert('Usted hizo click en el boton: '+ boton.textContent);
+Swal.fire({
+  title: "Envio Correcto",
+  text: "Usted envio correctamente los datos.",
+  icon: "success"
+});
 
 })} );
 
@@ -170,12 +174,94 @@ console.log('Nombre: '+ nombre);
 console.log('Apellido: '+ apellido);
 form.reset();
 
-})
+});
+
+/*Storage:permite almacenar datos de manera local en el navegador.
+localStorage:se almacena en el navegador de forma indefinida.
+SessionStorage:la informacion se almacena hasta que el usuario
+cierra la ventana.
+Sintaxis: localStorage.setItem(clave,valor);
+setItem: agrega elementos al Storage.
+getItem: que trae el elemento accedemos al valor o la informacion.
+clave:da nombre al elemento.
+valor:contenido que va a tener el elemento.*/
+
+localStorage.setItem('bienvenido','Bienvenidos al curso');
+
+let mensaje=localStorage.getItem('bienvenido');
+
+console.log(mensaje);
+
+sessionStorage.setItem('numeros',[1,2,3,4]);
+
+let listaNum=sessionStorage.getItem('numeros');
+
+console.log(listaNum);
+/* guardamos el valor dentro de la variable, luego almacenamos la variable,
+y retomamos la informacion con getItem y llamando a una segunda variable*/
+let user='Agustin';
+localStorage.setItem('usuario',user);
+
+let userLs=localStorage.getItem('usuario');
+
+console.log(userLs);
+
+/* ahora el usuario genera el valor de la variable*/
+
+let ingresoNombre=prompt('Ingrese su nombre');
+ localStorage.setItem('usuario-nuevo',ingresoNombre);
+
+let nombreIngresado=localStorage.getItem('usuario-nuevo');
+
+console.log(nombreIngresado);
+
+/* removeItem: metodo para borrar datos del Storage*/
+
+localStorage.removeItem('usuario');
+localStorage.clear('numeros');
+
+/*Almacenar Objetos*/
+
+const user1={
+nombre:'Roberto',
+edad:110,
+apellido:'Galan'
+}
+
+localStorage.setItem('usuario-ingresado',JSON.stringify(user1));
+
+const usuarioIngresado=JSON.stringify(user1);
+
+localStorage.setItem('usuario-ingresado',usuarioIngresado);
 
 
 
+/*el objeto se guarda de manera literal para ver la informacion que guarda
+ese objeto debemos transformarlo. Para esto utilisamos Json.
+Javascript Object Notation. transforma los datos de los objetos guardados
+en texto plano al enviarlo a la memoria.
+springify: metodo asociado a JSON transforma al objeto en parametro
+y lo devuelve en forma de texto plano.
+parse:transforma el texto de recibe de JSON y lo devuelve como objeto.*/
 
 
 
+/*GUARDAMOS ARRAY DE OBJETOS*/
 
+const productosNuevos=[
+{id:1,nombre:'Silla',precio:1500},
+{id:2,nombre:'Mesa',precio:2400},
+{id:3,nombre:'Sillon',precio:3500}
+];
+
+localStorage.setItem('productos-Nuevos',JSON.stringify(productosNuevos));
+
+const verProductosNuevos=JSON.parse(localStorage.getItem('productos-Nuevos'));
+
+console.log(verProductosNuevos);
+
+/*Bibliotecas
+Son bloques de codigo prediseñado que nos termiten darle un estilo a 
+estructuras fijas de java o mejorar acciones que tiene javascritp
+se incorporan al diseño a traves de archivos llamados CDN*/
 
