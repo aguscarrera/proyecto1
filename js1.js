@@ -66,9 +66,17 @@ menuPrincipal.appendChild(botonPrincipal);
  menuContenedor.appendChild(menuPrincipal);
 }
 
+
 /*ARMAMOS UNA FUNCION QUE CARGA TODO EL CODIGO A LA PAGINA*/
 
 window.onload=()=>{crearMenu();};
+
+const productosNuevos=[
+{id:1,nombre:'Iphone14',precio:1200,imagen:'../Imagenes/am.png'},
+{id:2,nombre:'Iphone15',precio:1300,imagen:'../Imagenes/oasis.jpg'},
+{id:3,nombre:'Iphone16',precio:1400,imagen:'../Imagenes/stone.jpg'},
+{id:4,nombre:'IphonePro16',precio:1500,imagen:'../Imagenes/stone.jpeg'}
+];
 
 
 /*EVENTOS: son respuestas que aplica javascript a acciones determinadas*/
@@ -129,7 +137,7 @@ else{
 
 /* a traves de un metodo de array voy a recorrer los botones de una botonera*/
 
-const btns=document.querySelectorAll('button');
+const btns=document.querySelectorAll('.enviar');
 
 btns.forEach((boton)=>{
 boton.addEventListener('click',function(){
@@ -248,20 +256,14 @@ parse:transforma el texto de recibe de JSON y lo devuelve como objeto.*/
 
 /*GUARDAMOS ARRAY DE OBJETOS*/
 
-const productosNuevos=[
-{id:1,nombre:'Silla',precio:1500},
-{id:2,nombre:'Mesa',precio:2400},
-{id:3,nombre:'Sillon',precio:3500}
-];
 
-localStorage.setItem('productos-Nuevos',JSON.stringify(productosNuevos));
 
-const verProductosNuevos=JSON.parse(localStorage.getItem('productos-Nuevos'));
 
-console.log(verProductosNuevos);
+
 
 /*Bibliotecas
 Son bloques de codigo prediseñado que nos termiten darle un estilo a 
 estructuras fijas de java o mejorar acciones que tiene javascritp
 se incorporan al diseño a traves de archivos llamados CDN*/
+
 
