@@ -13,10 +13,10 @@ setTimeout(()=>{
 console.log('Chau');
 /*setInterval: la unidad de tiempo es el intervalo para la repeticion.Repite las 
 ordenes de manera reiterada*/
-setInterval(()=> {
+/*setInterval(()=> {
 console.log('Hola');
 console.log('Chau');
-},2000);
+},2000);*/
 
 /*no corta*/
 let contador=0; /*arranca el contador de intervalos desde 0*/
@@ -45,9 +45,9 @@ console.log(eventoFuturo());
 
 
 const baseDatos=[
-{id:1,nombre:'Silla',precio:1200},
-{id:2,nombre:'Sillon',precio:2000},
-{id:3,nombre:'Mesa',precio:3000}
+{id:1,nombre:'Silla',precio:1200,imagen:'Imagenes/stone.jpeg'},
+{id:2,nombre:'Sillon',precio:2000,imagen:'Imagenes/oasis.jpg'},
+{id:3,nombre:'Mesa',precio:3000,imagen:'Imagenes/am.png'}
 ];
 /*manejar el tiempo de carga de los productos desde el storeage 
 al html*/
@@ -91,7 +91,7 @@ finally: ejecutar opciones de codigo mas alla si el try se ejecuta o no*/
 const pedirProductos=()=>{
 return new Promise((resolve,reject)=>{
 setTimeout(()=>{
-const promesa= true;
+const promesa= true;/*cambiamos a false la promesa no se cumple*/
 if(promesa){
 resolve(baseDatos);
 }else{reject('Fallo en la carga del producto.');}
@@ -106,13 +106,18 @@ const lista=document.querySelector('.gal');
 function mostrarProductos(a){
 lista.innerHTML='';
 a.forEach(item=>{
-	const li=document.createElement('li');
-	li.id=item.id;
-	li.textContent=`${item.nombre} -${item.precio} `;
-	lista.append(li);
-
-});
-};
+const li=document.createElement('li');
+li.id=item.id;
+li.innerHTML=`                  
+<div class="pro">
+<img src="${item.imagen}" alt="${item.nombre}" style="width:180px;height:auto";>
+<h3>${item.nombre}</h3>
+<p> Precio:$${item.precio}</p>
+<button class="botonComprar"> Agregar Carrito</button>
+</div>
+ `;
+ lista.appendChild(li);
+});}
 /*try-catch-finally es manejar la promesa*/
 async function cargarProductos(){
 
@@ -133,3 +138,6 @@ console.log('Proceso de carga correcto');
 };
 
 cargarProductos();
+
+
+
