@@ -17,14 +17,14 @@ const menuBotones=[
 menuContenedor*/
 
 function crearMenu(){
-/*selecciono el id que va a contener el menu*/
+/*selecciono el id que va a contener el menu
 const menuContenedor=document.querySelector('#menuContenedor');
-/* vamos a borrar el contenido de div y evito repeticiones.*/
+vamos a borrar el contenido de div y evito repeticiones.
 menuContenedor.innerHTML='';
-/*contruimos el menu a traves del array de objetos menuBotones*/
-/*agregar la lista principal*/
+contruimos el menu a traves del array de objetos menuBotones
+agregar la lista principal
 const menuPrincipal=document.createElement('ul');
-menuPrincipal.classList.add('menu-principal');
+menuPrincipal.classList.add('menu-principal');*/
 
 
 menuBotones.forEach(boton=>{
@@ -81,7 +81,7 @@ const productosNuevos=[
 
 /*EVENTOS: son respuestas que aplica javascript a acciones determinadas*/
 
-let btn=document.querySelector('#btn');
+
 /* llamado al evento a traves de metodo addEventListener y luego armo
 la accion: ('callbak',funcion)*/
 /*btn.addEventListener('click',function(){alert('Hola a todos');});

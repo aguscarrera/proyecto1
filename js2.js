@@ -1,9 +1,9 @@
 /*Asincronia 2 metodos. setTimeOut: permite realizar acciones asincronicas.Tiene 2 parametros:
 (callback,valor numerico).Valor numerico es tiempo.
 el compartamiento de javascript es sincronico. Si algo falla de funcionar todo el bloque.*/
-console.log('Hola a todos');
+/*console.log('Hola a todos');
 console.log('Hola');/*si el console.log(sasacasa); es error y se corta el flujo*/
-console.log('Bienvenidos');
+/*console.log('Bienvenidos');
 
 /*console.log('Hola');
 setTimeout(()=>{
@@ -19,12 +19,12 @@ console.log('Chau');
 },2000);*/
 
 /*no corta*/
-let contador=0; /*arranca el contador de intervalos desde 0*/
+/*let contador=0; /*arranca el contador de intervalos desde 0*/
 /*const intervalo= setInterval(()=>{
 contador++;/*sumamos una unidad*/
 /*console.log(contador);},2000);
 /*debemos cortar el loop que produce el contador.para eso agregamos clearInterval*/
-const intervalo= setInterval(()=>{
+/*const intervalo= setInterval(()=>{
 contador++;
 console.log(contador);
 if(contador===5){
@@ -35,13 +35,13 @@ console.log('El contador se freno.');
 
 /*Promise es el metodo que trae un objeto a futuro y traemos info.
 ej: un array. Sintaxis: new Promise((resolve,reject)=>{});*/
-const eventoFuturo=()=>{
+/*const eventoFuturo=()=>{
 	return new Promise((resolve, reject) => {
 		
 	});
 };
 
-console.log(eventoFuturo());
+console.log(eventoFuturo());*/
 
 
 const baseDatos=[
